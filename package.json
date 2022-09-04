@@ -1,0 +1,26 @@
+{
+  "name": "purrfect-pet-adoption-website",
+  "version": "1.0.0",
+  "description": "Full-stack website that allows prospective pet adopters and pet shelter to view information and communicate regarding adoptions of pets.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MinhHangwpi/Purrfect-Pet-Adoption-Website.git"
+  },
+  "author": "Minh-Hang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MinhHangwpi/Purrfect-Pet-Adoption-Website/issues"
+  },
+  "homepage": "https://github.com/MinhHangwpi/Purrfect-Pet-Adoption-Website#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "ejs-mate": "^4.0.0",
+    "express": "^4.18.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.5.4"
+  }
+}

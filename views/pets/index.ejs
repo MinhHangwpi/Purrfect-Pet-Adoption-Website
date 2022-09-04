@@ -1,0 +1,32 @@
+<% layout('layouts/boilerplate') %> 
+
+<h1>All Pets</h1>
+<div>
+    <a href="/pets/new">Add New Pet</a>
+</div>
+<% for (let pet of pets){%>
+<div class="card" mb-3>
+    <div class="row">
+        <div class="col-md-4">
+            <img class="img-fluid" alt="" src="<%=pet.image%>">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">Name: <%= pet.name %> </h5>
+                <p class="card-text">Gender: <%= pet.gender %></p>
+                <p class="card-text">Age: <%= pet.age %></p>
+                <p class="card-text">Species: <%= pet.species %></p>
+                <p class="card-text">Breed: <%= pet.breed %></p>
+                <p class="card-text">Cat-friendly: <%= pet.catFriendly %></p>
+                <p class="card-text">Dog-friendly: <%= pet.dogFriendly %></p>
+                <p class="card-text">About me: <%= pet.description %></p>
+                <p class="card-text">Status: <%= pet.status %></p>
+                <p class="card-text">
+                    <small class="text-muted">Location: <%= pet.location%></small>
+                </p>
+                <a class="btn btn-primary" href="/pets/<%=pet._id%>">View <%=pet.name%></a>
+            </div>
+        </div>
+    </div>
+</div>
+<% }%>
