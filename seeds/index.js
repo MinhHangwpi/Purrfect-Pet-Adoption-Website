@@ -68,7 +68,7 @@ const seedDB = async () => {
            name: sampleOne(petNames),
            gender: sampleOne(genderValues),
            age: Math.floor(Math.random()*14),
-           spieces: sampleOne(speciesValues),
+           species: sampleOne(speciesValues),
            breed: sampleOne(breedsValues),
            catFriendly: Math.random() < 0.5,
            dogFriendly: Math.random() < 0.5,
