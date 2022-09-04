@@ -50,9 +50,27 @@ app.get('/', (req, res) => {
 //display all pets
 app.get('/pets', async (req, res) => {
     const pets = await Pet.find();
-    res.render('pets', { pets });
+    res.render('pets/index', { pets });
 })
 
+// //render a form to create a new pet (GET request)
+app.get('/pets/new', async (req, res) => {
+    res.render('pets/new');
+})
+// //submit the form to create a new pet (POST request)
+app.post('/pets', async (req, res) => {
+//     // get the req.body then save to the database
+//     //redirect to a different page
+    const pet = new Pet(req.body.pet);
+    await pet.save();
+    res.redirect(`/pets/${pet._id}`);
+})
+
+//display a particular pets
+app.get('/pets/:id', async (req, res) => {
+    const pet = await Pet.findById(req.params.id);
+    res.render('pets/show', { pet })
+})
 
 app.listen(3000, () => {
     console.log('Serving on port 3000')

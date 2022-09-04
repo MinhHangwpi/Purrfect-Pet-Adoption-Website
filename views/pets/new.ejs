@@ -1,0 +1,91 @@
+<% layout('layouts/boilerplate') %>
+
+    <div class="row">
+        <h1 class="text-center">New Pet</h1>
+        <div class="col-6 offset-3">
+            <form action="/pets" method="POST" nonvalidate class="validated-form">
+                <div class="mb-3">
+                    <label for="pet-name" class="form-label">Pet's name: </label>
+                    <input type="text" class="form-control" id="pet-name" name="pet[name]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="gender" class="form-label">Gender: </label>
+                    <input type="text" class="form-control" id="gender" name="pet[gender]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age: </label>
+                    <input type="text" class="form-control" id="age" name="pet[age]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="species" class="form-label">Species: </label>
+                    <input type="text" class="form-control" id="species" name="pet[species]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="breed" class="form-label">Breed: </label>
+                    <input type="text" class="form-control" id="breed" name="pet[breed]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="cat-friendly">Cat-Friendly:</label>
+                    <select name="pet[catFriendly]" id="cat-friendly" class="cat-friendly">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="dog-friendly">Dog-Friendly:</label>
+                    <select name="pet[dogFriendly]" id="dog-friendly" class="dog-friendly">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="status">Status:</label>
+                    <select name="pet[status]" id="status" class="status">
+                        <option value="Available">Available</option>
+                        <option value="Pending Adoption">Pending Adoption</option>
+                        <option value="Adopted/Unavailable">Adopted/Unavailable</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location: </label>
+                    <input type="text" class="form-control" id="location" name="pet[location]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">About me: </label>
+                    <textarea id="description" name="pet[description]" required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <!-- <div class="mb-3">
+                <label for="shelter" class="form-label">Shelter: </label>
+                <input type="text" class="form-control" id="shelter" name="pet[petShelter]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>   
+            </div> -->
+                <div class="mb-3">
+                    <button class="btn btn-success">Add the Pet</button>
+                </div>
+            </form>
+            <a href="/pets">All pets</a>
+        </div>
+    </div>

@@ -1,0 +1,52 @@
+<% layout('layouts/boilerplate') %>
+
+    <div class="container">
+        <div class="row">
+            <div class="card mb-3">
+                <img src="<%=pet.image%> " class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%= pet.name%>
+                    </h5>
+                </div>
+                <div class="row">
+                    <div class="col">Gender: <%=pet.gender%>
+                    </div>
+                    <div class="col">Age: <%=pet.age%>
+                    </div>
+                    <div class="col">Species: <%=pet.species%>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">Breed: <%=pet.breed%>
+                    </div>
+                    <div class="col">Cat-friendly: <%=pet.catFriendly%>
+                    </div>
+                    <div class="col">Dog-friendly: <%=pet.dogFriendly%>
+                    </div>
+                </div>
+                <div class="row">Status: <%=pet.status%>
+                </div>
+
+                <div>
+                    <p class="card-text">About me: <%=pet.description%>
+                    </p>
+                </div>
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-muted">
+                        <%=pet.location%>
+                    </li>
+                </ul>
+                <div class="card-body">
+                    <a class="card-link btn btn-info" href="/pets/<%=pet._id%>/edit">Edit</a>
+                    <form action="/PETS PAGE TO EDIT (note,must override method" class="d-inline">
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+                <div class="card-footer text-muted">
+                    Updated 2 days ago
+                </div>
+            </div>
+        </div>
+    </div>
