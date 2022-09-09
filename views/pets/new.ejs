@@ -41,21 +41,21 @@
                 </div>
                 <div class="mb-3">
                     <label for="cat-friendly">Cat-Friendly:</label>
-                    <select name="pet[catFriendly]" id="cat-friendly" class="cat-friendly">
+                    <select name="pet[catFriendly]" id="cat-friendly" class="form-control">
                         <option value="true">Yes</option>
                         <option value="false">No</option>
-                    </select>
-                </div>
+                    </select> 
+                        
                 <div class="mb-3">
                     <label for="dog-friendly">Dog-Friendly:</label>
-                    <select name="pet[dogFriendly]" id="dog-friendly" class="dog-friendly">
+                    <select name="pet[dogFriendly]" id="dog-friendly" class="form-control">
                         <option value="true">Yes</option>
                         <option value="false">No</option>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="status">Status:</label>
-                    <select name="pet[status]" id="status" class="status">
+                    <select name="pet[status]" id="status" class="form-control">
                         <option value="Available">Available</option>
                         <option value="Pending Adoption">Pending Adoption</option>
                         <option value="Adopted/Unavailable">Adopted/Unavailable</option>
@@ -70,7 +70,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">About me: </label>
-                    <textarea id="description" name="pet[description]" required></textarea>
+                    <textarea class="form-control" type="text" id="description" name="pet[description]" required></textarea>
                     <div class="valid-feedback">
                         Looks good!
                     </div>

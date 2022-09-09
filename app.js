@@ -6,8 +6,12 @@ const Pet = require('./models/pets');
 const Shelter = require('./models/shelters');
 //catchAync middlewhere in utils
 
+
+const { errorLogger, errorResponder, invalidPathHandler } = require('./utils/middleware');
+
 //ExpressError custom defined error class in the util
 const methodOverride = require('method-override');
+const { render } = require('ejs');
 const app = express();
 
 // connect to mongoose
@@ -59,8 +63,8 @@ app.get('/pets/new', async (req, res) => {
 })
 // //submit the form to create a new pet (POST request)
 app.post('/pets', async (req, res) => {
-//     // get the req.body then save to the database
-//     //redirect to a different page
+    //     // get the req.body then save to the database
+    //     //redirect to a different page
     const pet = new Pet(req.body.pet);
     await pet.save();
     res.redirect(`/pets/${pet._id}`);
@@ -72,9 +76,34 @@ app.get('/pets/:id', async (req, res) => {
     res.render('pets/show', { pet })
 })
 
+//fetch the edit form
+app.get('/pets/:id/edit', async (req, res) => {
+    const pet = await Pet.findById(req.params.id);
+    res.render('pets/edit', { pet });
+})
+
+//put the edit
+app.put('/pets/:id', async (req, res) => {
+    const { id } = req.params;
+    const pet = await Pet.findByIdAndUpdate(id, { ...req.body.pet });
+    res.redirect(`/pets/${pet._id}`);
+})
+
+//delete a pet post
+app.delete('/pets/:id', async (req, res) => {
+    const { id } = req.params;
+    const pet = await Pet.findByIdAndDelete(id);
+    res.redirect('/pets')
+})
+
+app.use(errorLogger);
+app.use(errorResponder);
+app.use(invalidPathHandler);
+
 app.listen(3000, () => {
     console.log('Serving on port 3000')
 })
+
 
 
 

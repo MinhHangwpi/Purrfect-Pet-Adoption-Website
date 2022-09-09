@@ -40,7 +40,7 @@
                 </ul>
                 <div class="card-body">
                     <a class="card-link btn btn-info" href="/pets/<%=pet._id%>/edit">Edit</a>
-                    <form action="/PETS PAGE TO EDIT (note,must override method" class="d-inline">
+                    <form action="/pets/<%=pet._id%>?_method=DELETE" method="POST" class="d-inline">
                         <button class="btn btn-danger">Delete</button>
                     </form>
                 </div>

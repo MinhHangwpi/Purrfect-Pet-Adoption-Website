@@ -1,0 +1,91 @@
+<% layout('layouts/boilerplate') %>
+
+    <div class="row">
+        <h1 class="text-center">Edit Pet</h1>
+        <div class="col-6 offset-3">
+            <form action="/pets/<%=pet._id%>?_method=PUT" method="POST" nonvalidate class="validated-form">
+                <div class="mb-3">
+                    <label for="pet-name" class="form-label">Pet's name: </label>
+                    <input type="text" class="form-control" id="pet-name" name="pet[name]" value="<%=pet.name%>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="gender" class="form-label">Gender: </label>
+                    <input type="text" class="form-control" id="gender" name="pet[gender]" value="<%=pet.gender%>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age: </label>
+                    <input type="text" class="form-control" id="age" name="pet[age]" value="<%=pet.age%>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="species" class="form-label">Species: </label>
+                    <input type="text" class="form-control" id="species" name="pet[species]" value="<%=pet.species%>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="breed" class="form-label">Breed: </label>
+                    <input type="text" class="form-control" id="breed" name="pet[breed]" value="<%=pet.breed%>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    //deletey">Cat-Friendly:</label>
+                    <select name="pet[catFriendly]" id="cat-friendly" class="form-control">
+                        <option value="true" <%=pet.catFriendly === true ? 'selected': ''%>>Yes</option>
+                        <option value="false" <%=pet.catFriendly === false ? 'selected': ''%>>No</option>
+                    </select> 
+                        
+                <div class="mb-3">
+                    <label for="dog-friendly">Dog-Friendly:</label>
+                    <select name="pet[dogFriendly]" id="dog-friendly" class="form-control">
+                        <option value="true" <%=pet.catFriendly === true ? 'selected': ''%>>Yes</option>
+                        <option value="false" <%=pet.catFriendly === false ? 'selected': ''%>>No</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="status">Status:</label>
+                    <select name="pet[status]" id="status" class="form-control">
+                        <option value="Available" <%=pet.status === "Available" ? 'selected': ''%>>Available</option>
+                        <option value="Pending Adoption" <%=pet.status === "Pending Adoption" ? 'selected': ''%>>Pending Adoption</option>
+                        <option value="Adopted/Unavailable" <%=pet.status === "Adopted/Unavailable" ? 'selected': ''%>>Adopted/Unavailable</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location: </label>
+                    <input type="text" class="form-control" id="location" name="pet[location]" value="<%=pet.location%>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">About me: </label>
+                    <textarea class="form-control" type="text" id="description" name="pet[description]" required>
+                        <%=pet.description%>
+                    </textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <!-- <div class="mb-3">
+                <label for="shelter" class="form-label">Shelter: </label>
+                <input type="text" class="form-control" id="shelter" name="pet[petShelter]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>   
+            </div> -->
+                <div class="mb-3">
+                    <button class="btn btn-success">Edit</button>
+                </div>
+            </form>
+            <a href="/pets">All pets</a>
+        </div>
+    </div>
