@@ -9,21 +9,21 @@ const shelterSchema = new Schema({
         type: String,
         required: false
     },
-    address: {
+    location: {
         type: String,
         required: false
     },
     phone: {
         type: String,
-        match: /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/
+        //match: /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/
     },
     email: {
         type: String,
         required: false,
-        match: /\w+[\._]?\w+@.+/
+        //match: /\w+[\._]?\w+@.+/
     },
     pets: [{
-        type: [mongoose.Types.ObjectId],
+        type: Schema.Types.ObjectId,
         ref: 'Pet'
     }]
 });

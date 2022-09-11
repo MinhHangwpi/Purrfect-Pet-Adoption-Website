@@ -38,17 +38,18 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
-                    //deletey">Cat-Friendly:</label>
+                <div class="mb-3">
+                    <label for="cat-friendly">Cat-Friendly:</label>
                     <select name="pet[catFriendly]" id="cat-friendly" class="form-control">
                         <option value="true" <%=pet.catFriendly === true ? 'selected': ''%>>Yes</option>
                         <option value="false" <%=pet.catFriendly === false ? 'selected': ''%>>No</option>
-                    </select> 
-                        
+                    </select>
+                </div>        
                 <div class="mb-3">
                     <label for="dog-friendly">Dog-Friendly:</label>
                     <select name="pet[dogFriendly]" id="dog-friendly" class="form-control">
-                        <option value="true" <%=pet.catFriendly === true ? 'selected': ''%>>Yes</option>
-                        <option value="false" <%=pet.catFriendly === false ? 'selected': ''%>>No</option>
+                        <option value="true" <%=pet.dogFriendly === true ? 'selected': ''%>>Yes</option>
+                        <option value="false" <%=pet.dogFriendly === false ? 'selected': ''%>>No</option>
                     </select>
                 </div>
                 <div class="mb-3">

@@ -1,0 +1,52 @@
+<% layout('layouts/boilerplate') %>
+
+    <div class="container">
+        <div class="row">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <%= shelter.name%>
+                    </h3>
+                </div>
+                <div class="row">
+                    <div class="col">Phone: <%=shelter.phone%>
+                    </div>
+                    <div class="col">email: <%=shelter.email%>
+                    </div>
+                </div>
+
+                <!-- for the whole shelter -->
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-muted">
+                        <%=shelter.location%>
+                    </li>
+                </ul>
+                <div class="card-footer text-muted">
+                    Updated 2 days ago
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3>Our pets</h3>
+    <div class="container">
+        <div class="row">
+            <% for (let pet of shelter.pets) {%>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="<%=pet.image%>" alt="<%=pet.name%>-image">
+
+                        <div class="card-body">
+                            <h5 class="card-title"><%=pet.name%> </h5>
+                            <p class="card-text">
+                                <li><%=pet.age%> years old</li>
+                                <li><%=pet.location%></li>
+                            </p>
+                            <a href="/pets/<%=pet._id%>/" class="btn btn-info btn-sm">
+                                View Pet
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+    </div>

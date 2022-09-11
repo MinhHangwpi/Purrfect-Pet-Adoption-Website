@@ -40,18 +40,18 @@ const petSchema = new Schema({
     },
     location: String,
     petShelter: {
-        type: String,
-        //ref: 'Shelter',
+        type: Schema.Types.ObjectId,
+        ref: 'Shelter',
         required: false// to change to true later
     },
     image: String
 })
 
-// //create a virtual to get shelter's URL
-//create a virtual for pet's URL
-petSchema.virtual('url').get(() => {
-    return `shelter/${this._id}`;
-})
+// // //create a virtual to get shelter's URL
+// //create a virtual for pet's URL
+// petSchema.virtual('url').get(() => {
+//     return `shelter/${this._id}`;
+// })
 
 
 module.exports = mongoose.model('Pet', petSchema);

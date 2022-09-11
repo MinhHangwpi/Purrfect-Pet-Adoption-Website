@@ -27,6 +27,9 @@
                 </div>
                 <div class="row">Status: <%=pet.status%>
                 </div>
+                <div class="row">
+                    <span> Shelter: <%=shelter.name%> <a href="/shelters/<%=shelter._id.toString()%>/" class="btn btn-info btn-sm">View Shelter</a></span>   
+                </div>
 
                 <div>
                     <p class="card-text">About me: <%=pet.description%>

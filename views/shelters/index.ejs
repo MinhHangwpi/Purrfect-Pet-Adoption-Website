@@ -1,0 +1,17 @@
+<% layout('layouts/boilerplate') %> 
+
+<h1>All Shelters</h1>
+
+<% for (let shelter of shelters){%>
+<div class="card" mb-3>
+    <div class="row">
+        <h5 class="card-title col-md-4"><%=shelter.name%> </h5>
+                <span class="card-text col-md-3"><%=shelter.pets.length%> pets available</span>
+                <span class="card-text col-md-3">
+                    <small class="text-muted"><%= shelter.location%></small>
+                </span>
+                <a class="btn btn-info btn-sm col-auto" href="/shelters/<%=shelter._id.toString()%>">View Shelter</a>
+            </div>
+    </div>
+</div>
+<% }%>
